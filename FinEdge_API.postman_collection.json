@@ -1,0 +1,550 @@
+{
+	"info": {
+		"_postman_id": "finedge-api-collection",
+		"name": "FinEdge API Collection",
+		"description": "Postman collection for FinEdge Financial Management API\n\nMember 4: Analytics & Documentation Module\nKey Deliverables: Summary logic and Postman collection\n\nAPI Versioning: All endpoints support v1. Non-versioned paths are backward compatible.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/health",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api"
+					]
+				},
+				"description": "Get API version information"
+			},
+			"response": []
+		},
+		{
+			"name": "User APIs (v1)",
+			"description": "Member 1: User APIs Module - Version 1",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+					"url": {
+						"raw": "{{baseUrl}}/api/v1/users",
+						"host": [
+							"{{baseUrl}}"
+						],
+						"path": [
+							"api",
+							"v1",
+							"users"
+						]
+					},
+					"description": "Member 1: Get all users (v1)\n\nBackward compatible: /api/users also works"
+					},
+					"response": []
+				},
+				{
+					"name": "Get User by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Member 1: Get user by ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						},
+						"description": "Member 1: Create new user (v1)"
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John Updated\",\n  \"email\": \"john.updated@example.com\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Member 1: Update user (v1)"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Member 1: Delete user (v1)"
+					},
+					"response": []
+				}
+			],
+			"description": "Member 1: User APIs Module - Version 1"
+		},
+		{
+			"name": "Transaction APIs (v1)",
+			"description": "Member 2: Transaction APIs Module - Version 1",
+			"item": [
+				{
+					"name": "Get All Transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/transactions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions"
+							]
+						},
+						"description": "Member 2: Get all transactions (v1)\n\nBackward compatible: /api/transactions also works"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Transaction by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/transactions/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Member 2: Get transaction by ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Transaction",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\": 1,\n  \"amount\": 100.50,\n  \"type\": \"expense\",\n  \"category\": \"food\",\n  \"description\": \"Lunch\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/transactions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions"
+							]
+						},
+						"description": "Member 2: Create new transaction (v1)"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Transaction",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"amount\": 150.75,\n  \"description\": \"Updated transaction\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/transactions/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Member 2: Update transaction"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Transaction",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/transactions/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Member 2: Delete transaction"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Transactions by User ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/transactions/user/:userId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"user",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Member 2: Get all transactions for a user"
+					},
+					"response": []
+				}
+			],
+			"description": "Member 2: Transaction APIs Module"
+		},
+		{
+			"name": "Analytics APIs (v1)",
+			"description": "Member 4: Analytics & Documentation Module - Version 1",
+			"item": [
+				{
+					"name": "Get User Summary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/analytics/user/:userId/summary?startDate=2024-01-01&endDate=2024-12-31",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"analytics",
+								"user",
+								":userId",
+								"summary"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2024-01-01",
+									"description": "Optional start date filter (ISO format)"
+								},
+								{
+									"key": "endDate",
+									"value": "2024-12-31",
+									"description": "Optional end date filter (ISO format)"
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Member 4: Get financial summary for a user (v1)\n\nReturns:\n- Total income, expenses, balance\n- Category breakdown\n- Monthly breakdown\n- Top spending category"
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Insights",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/analytics/user/:userId/insights?startDate=2024-01-01&endDate=2024-12-31",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"analytics",
+								"user",
+								":userId",
+								"insights"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2024-01-01",
+									"description": "Optional start date filter"
+								},
+								{
+									"key": "endDate",
+									"value": "2024-12-31",
+									"description": "Optional end date filter"
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Member 4: Get spending insights and recommendations for a user (v1)\n\nReturns:\n- Financial insights\n- Recommendations\n- Top spending categories\n- Monthly trends"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category Breakdown",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/analytics/user/:userId/categories?startDate=2024-01-01&endDate=2024-12-31",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"analytics",
+								"user",
+								":userId",
+								"categories"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2024-01-01",
+									"description": "Optional start date filter"
+								},
+								{
+									"key": "endDate",
+									"value": "2024-12-31",
+									"description": "Optional end date filter"
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Member 4: Get category-wise spending breakdown for a user (v1)\n\nReturns:\n- All categories with totals\n- Percentage of total expenses\n- Transaction counts per category"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Transaction Statistics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/analytics/stats?userId=1&startDate=2024-01-01&endDate=2024-12-31&category=food&type=expense",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"analytics",
+								"stats"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1",
+									"description": "Optional user ID filter"
+								},
+								{
+									"key": "startDate",
+									"value": "2024-01-01",
+									"description": "Optional start date filter"
+								},
+								{
+									"key": "endDate",
+									"value": "2024-12-31",
+									"description": "Optional end date filter"
+								},
+								{
+									"key": "category",
+									"value": "food",
+									"description": "Optional category filter"
+								},
+								{
+									"key": "type",
+									"value": "expense",
+									"description": "Optional type filter (income/expense)"
+								}
+							]
+						},
+						"description": "Member 4: Get transaction statistics with filters (v1)\n\nReturns:\n- Total transactions and amounts\n- Statistics by category\n- Statistics by type\n- Date range information"
+					},
+					"response": []
+				}
+			],
+			"description": "Member 4: Analytics & Documentation Module - Version 1"
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
+
