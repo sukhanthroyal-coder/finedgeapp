@@ -1,4 +1,3 @@
-Here’s a **concise, unified `README.md`** combining all the provided documentation into a clean, professional format:
 
 ---
 
@@ -297,15 +296,4 @@ Includes all endpoints with example requests.
 
 ---
 
-# License
 
-Academic / Educational Project
-
----
-
-If you'd like, I can also provide:
-
-* A more professional GitHub-ready README with badges
-* A minimal one-page version
-* A detailed enterprise-style documentation version
-* Swagger/OpenAPI documentation format
