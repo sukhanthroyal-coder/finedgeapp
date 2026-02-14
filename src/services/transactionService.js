@@ -1,12 +1,5 @@
-// ============================================
-// MEMBER 2: Transaction APIs Module
-// ============================================
-// Key Deliverables: Transaction module implementation
-// ============================================
-
 const transactionModel = require('../models/transactionModel');
 
-// Service layer functions
 const getAllTransactions = async () => {
   return await transactionModel.findAll();
 };

@@ -1,10 +1,3 @@
-// ============================================
-// MEMBER 4: Analytics & Documentation Module
-// ============================================
-// Key Deliverables: Summary logic and Postman collection
-// Files: analytics.js, Postman collection
-// ============================================
-
 const transactionModel = require('../models/transactionModel');
 const userModel = require('../models/userModel');
 

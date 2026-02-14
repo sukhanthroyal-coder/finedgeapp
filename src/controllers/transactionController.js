@@ -1,14 +1,8 @@
-// ============================================
-// MEMBER 2: Transaction APIs Module
-// ============================================
-// Key Deliverables: Transaction module implementation
-// ============================================
 
 const transactionService = require('../services/transactionService');
 const AppError = require('../utils/AppError');
 const asyncHandler = require('../utils/asyncHandler');
 
-// Controller functions
 const getAllTransactions = asyncHandler(async (req, res) => {
   const transactions = await transactionService.getAllTransactions();
   res.status(200).json({

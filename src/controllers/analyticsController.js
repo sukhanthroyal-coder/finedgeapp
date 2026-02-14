@@ -1,18 +1,9 @@
-// ============================================
-// MEMBER 4: Analytics & Documentation Module
-// ============================================
-// Key Deliverables: Summary logic and Postman collection
-// ============================================
 
 const analytics = require('../utils/analytics');
 const userModel = require('../models/userModel');
 const AppError = require('../utils/AppError');
 const asyncHandler = require('../utils/asyncHandler');
 
-/**
- * Get user financial summary
- * GET /api/v1/analytics/user/:userId/summary
- */
 const getUserSummary = asyncHandler(async (req, res) => {
   const { userId } = req.params;
   const { startDate, endDate } = req.query;
@@ -31,10 +22,6 @@ const getUserSummary = asyncHandler(async (req, res) => {
   });
 });
 
-/**
- * Get transaction statistics
- * GET /api/v1/analytics/stats
- */
 const getStats = asyncHandler(async (req, res) => {
   const { userId, startDate, endDate, category, type } = req.query;
   
@@ -44,13 +31,11 @@ const getStats = asyncHandler(async (req, res) => {
   if (endDate) filters.endDate = endDate;
   if (category) filters.category = category;
   if (type) filters.type = type;
-  
-  // Validate type if provided
+
   if (type && !['income', 'expense'].includes(type)) {
     throw new AppError("Type must be either 'income' or 'expense'", 400);
   }
   
-  // Verify user exists if userId is provided
   if (userId) {
     const user = await userModel.findById(userId);
     if (!user) {
@@ -66,15 +51,10 @@ const getStats = asyncHandler(async (req, res) => {
   });
 });
 
-/**
- * Get spending insights for a user
- * GET /api/v1/analytics/user/:userId/insights
- */
 const getUserInsights = asyncHandler(async (req, res) => {
   const { userId } = req.params;
   const { startDate, endDate } = req.query;
-  
-  // Verify user exists
+
   const user = await userModel.findById(userId);
   if (!user) {
     throw new AppError('User not found', 404);
@@ -88,10 +68,6 @@ const getUserInsights = asyncHandler(async (req, res) => {
   });
 });
 
-/**
- * Get category breakdown for a user
- * GET /api/v1/analytics/user/:userId/categories
- */
 const getCategoryBreakdown = asyncHandler(async (req, res) => {
   const { userId } = req.params;
   const { startDate, endDate } = req.query;

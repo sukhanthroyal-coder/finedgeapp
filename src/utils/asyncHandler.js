@@ -1,9 +1,3 @@
-// ============================================
-// Async Handler Wrapper
-// ============================================
-// Wraps async route handlers to automatically catch errors
-// and pass them to Express error handling middleware
-// ============================================
 
 const asyncHandler = (fn) => {
   return (req, res, next) => {

@@ -1,22 +1,8 @@
-// ============================================
-// MEMBER 1: User APIs Module
-// ============================================
-// Key Deliverables: User routes and controller
-// ============================================
-
 const fs = require('fs').promises;
 const path = require('path');
 
 const USERS_FILE = path.join(__dirname, '../data/users.json');
 
-// TODO: Implement data access layer functions:
-// - findAll()         - Read all users from users.json
-// - findById(id)      - Find user by ID
-// - create(userData)   - Add new user to users.json
-// - update(id, userData) - Update user in users.json
-// - delete(id)        - Remove user from users.json
-
-// Helper function to read users file
 const readUsersFile = async () => {
   try {
     const data = await fs.readFile(USERS_FILE, 'utf8');
@@ -26,12 +12,10 @@ const readUsersFile = async () => {
   }
 };
 
-// Helper function to write users file
 const writeUsersFile = async (users) => {
   await fs.writeFile(USERS_FILE, JSON.stringify(users, null, 2));
 };
 
-// Model functions
 const findAll = async () => {
   return await readUsersFile();
 };

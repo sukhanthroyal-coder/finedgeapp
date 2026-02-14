@@ -1,14 +1,8 @@
-// ============================================
-// MEMBER 1: User APIs Module
-// ============================================
-// Key Deliverables: User routes and controller
-// ============================================
 
 const userService = require('../services/userService');
 const AppError = require('../utils/AppError');
 const asyncHandler = require('../utils/asyncHandler');
 
-// Controller functions
 const getAllUsers = asyncHandler(async (req, res) => {
   const users = await userService.getAllUsers();
   res.status(200).json({

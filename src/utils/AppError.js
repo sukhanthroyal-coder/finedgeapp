@@ -1,8 +1,3 @@
-// ============================================
-// Custom Application Error Class
-// ============================================
-// Extends native Error class to add statusCode and isOperational flag
-// ============================================
 
 class AppError extends Error {
   constructor(message, statusCode) {

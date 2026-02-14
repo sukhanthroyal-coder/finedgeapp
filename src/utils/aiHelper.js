@@ -1,5 +1,5 @@
 // ============================================
-// MEMBER 4: Analytics & Documentation Module (Optional)
+// MEMBER 4: Analytics & Documentation Module 
 // ============================================
 // Helper utilities for AI-related features
 // ============================================

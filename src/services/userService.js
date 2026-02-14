@@ -1,12 +1,5 @@
-// ============================================
-// MEMBER 1: User APIs Module
-// ============================================
-// Key Deliverables: User routes and controller
-// ============================================
-
 const userModel = require('../models/userModel');
 
-// Service layer functions
 const getAllUsers = async () => {
   return await userModel.findAll();
 };

@@ -1,24 +1,11 @@
-// ============================================
-// MEMBER 3: Middleware & Utils Module
-// ============================================
-// Key Deliverables: Error handling, validation, and logging
-// ============================================
-
-// ============================================
-// MEMBER 3: Middleware & Utils Module
-// ============================================
-// Key Deliverables: Error handling, validation, and logging
-// ============================================
 
 const AppError = require('../utils/AppError');
 
-// Helper function to validate email format
 const isValidEmail = (email) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 };
 
-// User validation middleware
 const validateUser = (req, res, next) => {
   const { name, email } = req.body;
   const errors = [];
@@ -39,7 +26,6 @@ const validateUser = (req, res, next) => {
   next();
 };
 
-// Transaction validation middleware
 const validateTransaction = (req, res, next) => {
   const { userId, amount, type } = req.body;
   const errors = [];

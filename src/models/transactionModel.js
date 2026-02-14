@@ -1,23 +1,8 @@
-// ============================================
-// MEMBER 2: Transaction APIs Module
-// ============================================
-// Key Deliverables: Transaction module implementation
-// ============================================
-
 const fs = require('fs').promises;
 const path = require('path');
 
 const TRANSACTIONS_FILE = path.join(__dirname, '../data/transactions.json');
 
-// TODO: Implement data access layer functions:
-// - findAll()              - Read all transactions from transactions.json
-// - findById(id)           - Find transaction by ID
-// - create(transactionData) - Add new transaction to transactions.json
-// - update(id, transactionData) - Update transaction in transactions.json
-// - delete(id)             - Remove transaction from transactions.json
-// - findByUserId(userId)   - Find all transactions for a user
-
-// Helper function to read transactions file
 const readTransactionsFile = async () => {
   try {
     const data = await fs.readFile(TRANSACTIONS_FILE, 'utf8');
@@ -27,12 +12,10 @@ const readTransactionsFile = async () => {
   }
 };
 
-// Helper function to write transactions file
 const writeTransactionsFile = async (transactions) => {
   await fs.writeFile(TRANSACTIONS_FILE, JSON.stringify(transactions, null, 2));
 };
 
-// Model functions
 const findAll = async () => {
   return await readTransactionsFile();
 };

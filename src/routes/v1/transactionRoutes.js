@@ -1,16 +1,8 @@
-// ============================================
-// MEMBER 2: Transaction APIs Module - API v1
-// ============================================
-// Key Deliverables: Transaction module implementation
-// Files: transactionRoutes.js, transactionController.js, transactionService.js, transactionModel.js
-// ============================================
-
 const express = require('express');
 const router = express.Router();
 const transactionController = require('../../controllers/transactionController');
 const { validateTransaction } = require('../../middleware/validator');
 
-// Transaction API Routes v1
 router.get('/', transactionController.getAllTransactions);
 router.get('/:id', transactionController.getTransactionById);
 router.post('/', validateTransaction, transactionController.createTransaction);
